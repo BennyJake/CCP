@@ -1,3 +1,9 @@
+.section-title h3 {
+    font-weight: 700;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
 a {
     color: #003352;
     text-decoration: none;
@@ -137,8 +143,21 @@ a:hover {
     background: #003352;
 }
 
+.why-us .icon-boxes .icon-box div {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width:100%;
+}
+
 .why-us .icon-boxes .icon-box i{
     color: #955623;
+}
+
+.why-us .icon-boxes .icon-box{
+    height:370px;
 }
 
 .icon-boxes .icon-box .more-btn{
@@ -226,4 +245,9 @@ a:hover {
 }
 .info iframe{
     margin-top:35px;
+}
+
+.about .count-box span.dollar {
+    display: inline;
+    margin-left: 0px;
 }

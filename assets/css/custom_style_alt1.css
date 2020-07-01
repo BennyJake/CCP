@@ -1,0 +1,19 @@
+.why-us .icon-boxes .icon-box {
+    transition: all ease-in-out 0.4s;
+}
+
+.why-us .icon-boxes .icon-box:hover{
+    background: #003352;
+    transition: all ease-in-out 0.4s;
+    margin-top:-20px !important;
+}
+
+.why-us .icon-boxes .icon-box:hover .more-btn{
+    background: #5f90b1;
+    transition: all ease-in-out 0.4s;
+}
+
+.why-us .icon-boxes .icon-box:hover .more-btn:hover{
+    background: #955623;
+    transition: all ease-in-out 0.4s;
+}
