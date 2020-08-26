@@ -1,0 +1,70 @@
+<form name="formUserLogin" id="formUserLogin" method="post" action="https://ccp.interprose.com/login/post.do">
+    <input type="hidden" id="browserName" name="browser" value="Netscape">
+    <input type="hidden" id="browserVersion" name="browserVer" value="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36">
+    <input type="hidden" id="browserOS" name="os" value="Win32">
+    <input type="hidden" id="screenWidth" name="screenX" value="1600">
+    <input type="hidden" id="screenHeight" name="screenY" value="900">
+    <input type="hidden" id="colorDepth" name="colorDepth" value="24">
+    <input type="hidden" id="mfaTime" name="verificationCodeTime" value="">
+    <input type="hidden" id="oauthCode" name="code" value="">
+    <input type="hidden" id="oauthState" name="state" value="">
+
+    <table id="loginBox">
+        <tbody><tr>
+            <td colspan="2"><h1>&nbsp;</h1></td>
+        </tr>
+        <tr>
+            <td rowspan="10" class="description"><p>Welcome, please login.</p></td>
+        </tr>
+        <tr id="usernameLabelRow">
+            <td><label for="username">Username</label></td>
+        </tr>
+        <tr id="usernameFieldRow">
+            <td><input id="username" name="username" size="30" autocomplete="username" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"></td>
+        </tr>
+        <tr id="passwordLabelRow">
+            <td><label for="password">Password</label></td>
+        </tr>
+        <tr id="passwordFieldRow">
+            <td><input type="password" id="password" name="password" size="30" autocomplete="current-password" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"></td>
+        </tr>
+        <!--<tr id="mfaLabelRow">
+            <td><label for="mfa">Multi-Factor Authentication</label></td>
+        </tr>
+        <tr id="mfaFieldRow">
+            <td><input id="mfa" maxlength="6" autocapitalize="off" autocomplete="off" name="verificationCode" size="30" pattern="[0-9]{6}" title="6 digit code" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"></td>
+        </tr>-->
+        <tr id="languageLabelRow">
+            <td>
+                Language
+
+            </td>
+        </tr>
+        <tr id="languageFieldRow">
+            <td>
+                <select name="lang"><option value="en">English</option></select>
+
+            </td>
+        </tr>
+        <tr id="submitRow">
+            <td>
+                <ul>
+                    <li><input type="submit" name="btnSubmit" value="Sign In" class="button"></li>
+
+
+
+                    <li><button type="reset" class="button" id="cancelButton">Cancel</button></li>
+                </ul>
+            </td>
+        </tr>
+        <tr id="forgotPasswordRow">
+            <td>
+                <a href="/user/password/reset.do?customerID=CCP">Did you forget your password?</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 40px;"></td>
+        </tr>
+        </tbody></table>
+
+</form>

@@ -3,7 +3,6 @@
     font-size: 34px;
     margin-bottom: 30px;
 }
-
 a {
     color: #003352;
     text-decoration: none;
@@ -11,6 +10,23 @@ a {
 a:hover {
     color: #955623;
     text-decoration: none;
+}
+.nav-menu a {
+    display: block;
+    position: relative;
+    color: #565e49;
+    padding: 10px 12px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+}
+#header {
+    height: 70px;
+    z-index: 997;
+    transition: all 0.5s ease-in-out;
+    padding: 14px 0;
+    background: #fff;
 }
 .contact-info{
     margin: 0 auto;
@@ -49,7 +65,11 @@ a:hover {
 .why-us .content .more-btn:hover{
     color: #003352;
 }
-
+.cta {
+    background: #003352;
+    padding: 50px 0;
+    color: #ffffff;
+}
 /* From TECHIE */
 .testimonials .testimonial-item p {
     font-style: italic;
@@ -64,14 +84,28 @@ a:hover {
 }
 /* END From TECHIE */
 
-#cta {
-    padding: 30px;
+#team {
     background: #003352;
-    border-radius: 4px;
     color: #fff;
 }
 
-#cta .more-btn, #testimonials .more-btn {
+#team .member p{
+    overflow:hidden;
+}
+
+#team h2{
+    color: #fff;
+}
+.team .member .social {
+    background: #955623;
+}
+.team .member .social a:hover {
+    color: #5f90b1;
+}
+.team .member .member-info span{
+    color: #003352;
+}
+#cta .more-btn, #team .more-btn, #testimonials .more-btn {
     display: inline-block;
     background: #5f90b1;
     padding: 6px 30px 8px 30px;
@@ -79,7 +113,7 @@ a:hover {
     border-radius: 50px;
     transition: all ease-in-out 0.4s;
 }
-#cta .more-btn:hover, #testimonials .more-btn:hover {
+#cta .more-btn:hover, #team .more-btn:hover, #testimonials .more-btn:hover {
     background: #955623;
 }
 
@@ -250,4 +284,21 @@ a:hover {
 .about .count-box span.dollar {
     display: inline;
     margin-left: 0px;
+}
+
+#testimonials .testimonial-item a {
+
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: .8em;
+}
+
+.nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a{
+    color: #955623;
+}
+
+@media (min-width: 992px) {
+    .show-mobile{
+        display: none;
+    }
 }

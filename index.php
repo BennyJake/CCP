@@ -1,105 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>CCP</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- Custom CSS File -->
-  <link href="assets/css/custom_style.css" rel="stylesheet">
-  <link href="assets/css/custom_style_alt1.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Flexor - v2.1.1
-  * Template URL: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-none d-lg-block">
-    <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <ul>
-          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a></li>
-            <li><i class="icofont-phone"></i><a href="tel:123-456-7890">Phone: 589.55488.55</a></li>
-          <li><i class="icofont-phone"></i><a href="tel:123-456-7890">Phone: 589.55488.55</a></li>
-            <li><i class="icofont-hand-up"></i><a href="sms:123-456-7890">Text: 599.55488.55</a></li>
-          <li><i class="icofont-clock-time icofont-flip-horizontal"></i> Mon-Fri 8am - 5pm</li>
-            <li><i class="icofont-pin icofont-flip-horizontal"></i><a href="https://www.google.com/maps/place/vcaqua/@40.698303,-73.9910377,17z/data=!4m8!1m2!2m1!1sA108+Adam+Street+New+York,+NY+535022!3m4!1s0x89c25a35d886ece5:0x62e24eacc2d0fc67!8m2!3d40.698303!4d-73.988849" target="_blank">123 Testville Ave, TS 123456</a></li>
-        </ul>
-
-      </div>
-      <!--<div class="cta">
-        <a href="#" class="scrollto">Pay Online</a>
-        <a href="#" class="scrollto">Client Login</a>
-      </div>-->
-    </div>
-  </section>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container d-flex">
-
-      <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html"><span><img src="assets/img/logo/CCP_WordMark_V2.svg"></span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">Technology</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <!--<li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>-->
-        </ul>
-      </nav><!-- .nav-menu -->
-
-    </div>
-  </header><!-- End Header -->
+<?php
+require_once('insert/head.phtml');
+require_once('insert/top_bar.phtml');
+require_once('insert/header.phtml');
+?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
@@ -132,7 +35,7 @@
                           <i class="bx bx-group"></i>
                           <h4>Who We Are</h4>
                           <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                              82 years of Service, Compliance and Results
                           </p>
                           <div class="text-center">
                               <a href="#" class="more-btn">Meet the Team <i class="bx bx-chevron-right"></i></a>
@@ -143,7 +46,7 @@
                   <div class="icon-box alt-icon-box mt-4 mt-xl-0">
                     <i class="bx bx-message-detail"></i>
                     <h4>Testimonials</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <p>Hear from our clients and consumers</p>
                     <div class="text-center">
                       <a href="#" class="more-btn">View All <i class="bx bx-chevron-right"></i></a>
                     </div>
@@ -153,7 +56,7 @@
                   <div class="icon-box alt-icon-box mt-4 mt-xl-0">
                     <i class="bx bx-credit-card-front"></i>
                     <h4>Pay Online</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <p>Log-in for online payment information</p>
                     <div class="text-center">
                       <a href="#" class="more-btn">Pay Now <i class="bx bx-chevron-right"></i></a>
                     </div>
@@ -163,7 +66,7 @@
                   <div class="icon-box alt-icon-box mt-4 mt-xl-0">
                     <i class="bx bx-door-open"></i>
                     <h4>Client Log-In</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <p>Access your Client dashboard</p>
                     <div class="text-center">
                       <a href="#" class="more-btn">Log&ndash;In <i class="bx bx-chevron-right"></i></a>
                     </div>
@@ -191,11 +94,11 @@
           <div class="testimonial-item">
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                "The team at Credit Collection Partners is always very professional and timely in their work, helping to secure revenue for smaller, rural counties who otherwise wouldn't receive this funding that goes to support critical court and county services. They really do a great job, and much of it is because they know how to 'walk the walk.'...
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i><br/><a href="testimonials.php"> click for full review</a>
               <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""/>
-              <span class="name">Saul Goodman</span><br/>
-              <span class="description">Ceo &amp; Founder</span>
+              <span class="name">Justin Hood</span><br/>
+              <span class="description">IL State’s Attorney's Appellate Prosecutor Board President & Hamilton County State's Attorney</span>
             </p>
 
           </div>
@@ -203,11 +106,11 @@
           <div class="testimonial-item">
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              "Macoupin County previously attempted to oversee all collection of outstanding fines internally within the State’s Attorney’s Office. Pay or Appear notices were sent to defendants, many of which were ‘mail returned’, but rarely did these court appearances result in meaningful payment of fines...
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i><br/><a href="testimonials.php"> click for full review</a>
               <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <span class="name">Saul Goodman</span><br/>
-              <span class="description">Ceo &amp; Founder</span>
+              <span class="name">Jennifer Watson</span><br/>
+              <span class="description">Macoupin County State's Attorney</span>
             </p>
 
           </div>
@@ -215,11 +118,10 @@
           <div class="testimonial-item">
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              "I can't say enough good things about CCP! Having Becky Jansen, a former Circuit Clerk, on their team is such a plus! With her knowledge of Circuit Clerk operations, her expertise in getting the collection process started is amazing! She is a great help to me and my staff, along with Rick and Megan. They really take the time to answer questions and always return phone calls promptly."              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <span class="name">Saul Goodman</span><br/>
-              <span class="description">Ceo &amp; Founder</span>
+              <span class="name">Debbie Dugan</span><br/>
+              <span class="description">Pike County Circuit Clerk (former)</span>
             </p>
 
           </div>
@@ -227,26 +129,14 @@
           <div class="testimonial-item">
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              "CCP is so highly integrated with the Goodin Associates Collection interface that it makes placing cases for collection and reporting transactions/adjustments a breeze! Becky Jansen is there every step of the way to ensure your staff knows how to use it."              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <span class="name">Saul Goodman</span><br/>
-              <span class="description">Ceo &amp; Founder</span>
+              <span class="name">Kathy Emerick</span><br/>
+              <span class="description">Fayette County Circuit Clerk</span>
             </p>
 
           </div>
 
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <span class="name">Saul Goodman</span><br/>
-              <span class="description">Ceo &amp; Founder</span>
-            </p>
-
-          </div>
 
         </div>
           <div class="text-center" style="margin-top:20px">
@@ -261,7 +151,7 @@
 
         <div class="text-center section-title">
           <h3>Secure Technology</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p> CCP has adopted the most advanced, secure, cloud-based, accounts receivable management platform solution on the market. This platform has afforded us the luxury of integrating the best, most advanced, cutting edge technology available in call center environments today.</p>
           <p>&nbsp;</p>
           <div class="text-center">
             <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
@@ -284,7 +174,8 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
               <h3>Credit Collection Partners</h3>
-              <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+              <p>CCP was built on the foundation of Service, Compliance, and Results. These are the principles
+                that have made CCP a thriving Illinois based company since our inception in 1938.</p>
               <div class="social-links text-center text-lg-left pt-3 pt-lg-0">
                 <a href="#" class="twitter"><i class="bx bxl-twitter bx-lg"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook bx-lg"></i></a>
@@ -319,20 +210,21 @@
 
               <div>
                 <i class="ri-phone-line"></i>
-                <p><a href="tel:123-456-7890">Phone: +1 5589 55488 55</a></p>
+                <p><a href="tel:123-456-7890">Phone: (217) 284-4400 </a></p>
               </div>
+
 
                 <div>
                     <i class="ri-phone-line"></i>
-                    <p><a href="sms:123-456-7890">Text: +1 5589 55488 55</a></p>
+                    <p><a href="sms:123-456-7890">Text: CCP to 43783</a></p>
                 </div>
                 <div>
                     <i class="ri-phone-line"></i>
-                    <p>Mon-Fri 8am - 5pm </p>
+                    <p>Mon-Fri 9am - 5pm </p>
                 </div>
                 <div>
                     <i class="ri-map-pin-line"></i>
-                    <p><a href="https://www.google.com/maps/place/vcaqua/@40.698303,-73.9910377,17z/data=!4m8!1m2!2m1!1sA108+Adam+Street+New+York,+NY+535022!3m4!1s0x89c25a35d886ece5:0x62e24eacc2d0fc67!8m2!3d40.698303!4d-73.988849" target="_blank">123 Testville Ave, <br/>TS 123456</a></p>
+                    <p><a href="https://www.google.com/maps/place/vcaqua/@40.698303,-73.9910377,17z/data=!4m8!1m2!2m1!1sA108+Adam+Street+New+York,+NY+535022!3m4!1s0x89c25a35d886ece5:0x62e24eacc2d0fc67!8m2!3d40.698303!4d-73.988849" target="_blank">905 West Spresser Street <br/>Taylorville, IL 62568</a></p>
                 </div>
                 <div>
                     <iframe border="0" frameborder="0" style="border: 0; height:90px; width:200px;" src="https://seal-stlouis.bbb.org/frame/ruhzbul/bbb-310569227.png?chk=306DB23B51"></iframe>
@@ -357,7 +249,7 @@
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message/Review"></textarea>
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message/Customer Review"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">

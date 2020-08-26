@@ -1,0 +1,48 @@
+.features .nav-link {
+    color: #556270;
+}
+
+.features .nav-link:hover {
+    color: #955623;
+}
+
+.features .nav-link.active {
+    color: #955623;
+    border-color: #003352;
+}
+
+#hero{
+    z-index:0;
+}
+
+#philanthropy .row{
+    background-color:white;
+}
+
+.features .details li {
+    color: #777777;
+}
+
+section .col-lg-6{
+    padding-top:60px;
+}
+
+section#philanthropy {
+    padding: 0 0 60px 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 24px;
+    width: 24px;
+    background-size: 100%, 100%;
+}
+
+.carousel-control-next-icon
+{
+    background-image: url("../../img/right-arrow-solid-24.png");
+}
+
+.carousel-control-prev-icon {
+    background-image: url("../../img/left-arrow-solid-24.png");
+}

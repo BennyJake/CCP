@@ -1,0 +1,40 @@
+.features .nav-link {
+    color: #556270;
+}
+
+.features .nav-link:hover {
+    color: #955623;
+}
+
+.features .nav-link.active {
+    color: #955623;
+    border-color: #003352;
+}
+
+#hero{
+    z-index:0;
+}
+
+#features .row, #features .row .col-lg-3,  #features .row .col-lg-9{
+    background-color:white;
+}
+
+#features .row .col-lg-3, #features .row .col-lg-9{
+    padding-top:60px;
+}
+
+#features .row .col-lg-3{
+    padding-left:60px;
+}
+
+#features .row .col-lg-9{
+    padding-right:60px;
+}
+
+.features .details li {
+    color: #777777;
+}
+
+section#features {
+    padding: 0 0 60px 0;
+}
