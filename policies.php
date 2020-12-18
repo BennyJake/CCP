@@ -1,7 +1,7 @@
 <?php
 
 $assetDir = 'policies';
-$heroTitle = 'Our Policies';
+$heroTitle = 'Policies';
 
 require_once('insert/header_aggregator.phtml');
 ?>
@@ -20,7 +20,7 @@ require_once('insert/header_aggregator.phtml');
                             <a class="nav-link" data-toggle="tab" href="#tab-2">Terms &amp; Conditions of Use</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tab-3">Refunds</a>
+                            <a class="nav-link" data-toggle="tab" href="#tab-3">Overpayment Refunds</a>
                         </li>
                         <!--<li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
@@ -69,7 +69,7 @@ require_once('insert/header_aggregator.phtml');
                         <div class="tab-pane" id="tab-3">
                             <div class="row">
                                 <div class="col-lg-12 details order-2 order-lg-1">
-                                    <h3>Refund Policy</h3>
+                                    <h3>Overpayment Refund Policy</h3>
                                     <p>It is the policy of Credit Collection Partners, Inc. (CCP) to refund any overpayment within a 30-day period back to the person who paid the overpayment to CCP. Refunds will be mailed to the address we have on file at the time of the refund or refunded to the card used in the transaction.</p>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ require_once('insert/header_aggregator.phtml');
                 <p> CCP has adopted the most advanced, secure, cloud-based, accounts receivable management platform solution on the market. This platform has afforded us the luxury of integrating the best, most advanced, cutting edge technology available in call center environments today.</p>
                 <p>&nbsp;</p>
                 <div class="text-center">
-                    <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                    <a href="technology.php" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
                 </div>
             </div>
 

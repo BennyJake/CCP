@@ -38,4 +38,30 @@
     <?php if(isset($assetDir)){ ?>
     <link href="assets/css/<?= $assetDir ?>/custom_style.css" rel="stylesheet">
     <?php } ?>
+
+    <?php
+    $backgroundImage = null;
+    if($assetDir == 'markets'){
+        $backgroundImage = 'assets/img/bg/markets.jpg';
+    }
+    elseif ($assetDir == 'technology'){
+        $backgroundImage = 'assets/img/bg/technology.jpg';
+    }
+    elseif ($assetDir == 'consumer-reviews' || $assetDir == 'client-testimonials'){
+        $backgroundImage = 'assets/img/bg/reviews.jpg';
+    }
+    elseif ($assetDir == 'about' || $assetDir == 'philanthropy' || $assetDir == 'policies'){
+        $backgroundImage = 'assets/img/bg/about.jpg';
+    }
+
+    if(isset($backgroundImage)){
+        ?>
+    <style type="text/css">
+        #hero{
+            background-image: url('<?= $backgroundImage ?>');
+        }
+    </style>
+    <?php
+    }
+    ?>
 </head>

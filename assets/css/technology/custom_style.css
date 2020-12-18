@@ -171,3 +171,19 @@ section#about{
 .card-text{
     min-height:250px;
 }
+
+#features .row {
+    padding: 60px 20px;
+    background-color: white;
+}
+
+section#features {
+    padding: 0 0 60px 0;
+}
+
+.features h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #556270;
+}

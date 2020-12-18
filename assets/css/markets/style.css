@@ -26,6 +26,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+#features .row{
+  padding:60px 20px;
+  background-color:white;
+}
+
+section#features {
+  padding: 0 0 60px 0;
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -453,35 +462,6 @@ section {
   color: #646c55;
 }
 
-.team .member{
-  transition: all ease-in-out 0.4s;
-  margin-top: 0 !important;
-}
-
-.team .member h4{
-  transition: all ease-in-out 0.4s;
-  text-decoration: none;
-}
-
-.team .member img{
-  transition: all ease-in-out 0.4s;
-  filter: brightness(85%);
-}
-
-.team .member:hover {
-  transition: all ease-in-out 0.4s;
-  margin-top: -20px !important;
-}
-
-.team .member:hover h4{
-  transition: all ease-in-out 0.4s;
-  text-decoration: underline;
-}
-
-.team .member:hover img{
-  transition: all ease-in-out 0.4s;
-  filter: brightness(110%);
-}
 /*.about .count-box a {
   font-weight: 600;
   display: block;
@@ -2005,8 +1985,4 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
-}
-
-.card-text{
-  overflow:hidden;
 }

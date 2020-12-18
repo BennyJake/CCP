@@ -38,3 +38,7 @@
 section#features {
     padding: 0 0 60px 0;
 }
+
+#hero {
+    height: 40vh;
+}

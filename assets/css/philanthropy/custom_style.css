@@ -46,3 +46,7 @@ section#philanthropy {
 .carousel-control-prev-icon {
     background-image: url("../../img/left-arrow-solid-24.png");
 }
+
+#hero {
+    height: 40vh;
+}

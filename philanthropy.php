@@ -1,7 +1,7 @@
 <?php
 
 $assetDir = 'philanthropy';
-$heroTitle = 'Our Philanthropy';
+$heroTitle = 'Philanthropy';
 
 require_once('insert/header_aggregator.phtml');
 ?>

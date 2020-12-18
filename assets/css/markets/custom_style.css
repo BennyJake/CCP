@@ -7,6 +7,25 @@ section#about{
 .about .content ul i {
     color: #955623;
 }
+
+
+.more-btn{
+    display: inline-block;
+    background: #5f90b1;
+    padding: 6px 20px 8px 20px;
+    color: #fff;
+    border-radius: 50px;
+    transition: all ease-in-out 0.4s;
+}
+.more-btn:hover{
+    background:#955623;
+}
+.more-btn i {
+    font-size: 14px;
+    margin-bottom:0px;
+    color: #fff;
+}
+
 .about .play-btn {
     width: 94px;
     height: 94px;
@@ -72,7 +91,7 @@ section#about{
 }
 
 .clients img {
-    /*max-width: 45%;*/
+    max-width: 45%;
     transition: all 0.4s ease-in-out;
     display: inline-block;
     padding: 15px 0;
@@ -168,6 +187,23 @@ section#about{
     height: 40vh;
 }
 
-.card-text{
-    min-height:250px;
+#features .more-btn{
+    background: #5f90b1;
+    transition: all ease-in-out 0.4s;
+    display: inline-block;
+    padding: 6px 20px 8px 20px;
+    color: #fff;
+    border-radius: 50px;
+}
+
+#features .more-btn:hover{
+    background: #955623;
+    transition: all ease-in-out 0.4s;
+}
+
+#features .more-btn i {
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: #fff;
+    float: none;
 }
