@@ -44,8 +44,8 @@ require_once('insert/header_aggregator.phtml');
 
         <div class="row" style="padding-top:60px;">
           <div class="col-lg-6 video-box align-self-baseline">
-            <img src="assets/img/Proofs/CCP_A_About.jpg" class="img-fluid" alt="">
-              <div style="width:100%;background-color:#955623;color:white;font-weight:600;padding:5px;font-size:.8em;text-align: right;">Christian County, Illinois Courthouse</div>
+            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084094/CCP/proofs/CCP_A_About_dvsbvg.jpg" class="img-fluid" alt="">
+              <div style="width:100%;background-color:#955623;color:white;font-weight:600;padding:5px;font-size:.8em;text-align: right;">Christian County Courthouse, Illinois</div>
               <div style="width:100%;text-align:right;"><span style="font-size:.7em;"><a href="https://www.flickr.com/photos/m_t_t/4511797547/in/photolist-7SG9cc-7SKqEw-7SG9dT-7SKqAA/" target="_blank">Photo taken by Matt Turner.</a> <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Some Rights Reserved.</a> This image has not been modified.</span></div>
             <!--<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>-->
           </div>
@@ -104,7 +104,7 @@ require_once('insert/header_aggregator.phtml');
                 <div class="col-lg-3 col-md-6 align-items-stretch" data-aos="fade-up">
                     <div class="member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084119/CCP/team/team-1_hiodeo.jpg" class="img-fluid" alt="">
                             <!--<div class="social">
                                 <a href=""><i class="icofont-twitter"></i></a>
                                 <a href=""><i class="icofont-facebook"></i></a>
@@ -128,7 +128,7 @@ require_once('insert/header_aggregator.phtml');
                 <div class="col-lg-3 col-md-6 align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084119/CCP/team/team-2_pgtezu.jpg" class="img-fluid" alt="">
                             <!--<div class="social">
                                 <a href=""><i class="icofont-twitter"></i></a>
                                 <a href=""><i class="icofont-facebook"></i></a>
@@ -153,7 +153,7 @@ require_once('insert/header_aggregator.phtml');
                 <div class="col-lg-3 col-md-6 align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084119/CCP/team/team-3_vnavaa.jpg" class="img-fluid" alt="">
                             <!--<div class="social">
                                 <a href=""><i class="icofont-twitter"></i></a>
                                 <a href=""><i class="icofont-facebook"></i></a>
@@ -177,7 +177,7 @@ require_once('insert/header_aggregator.phtml');
                 <div class="col-lg-3 col-md-6 align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                     <div class="member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084119/CCP/team/team-4_fa85n8.jpg" class="img-fluid" alt="">
                             <!--<div class="social">
                                 <a href=""><i class="icofont-twitter"></i></a>
                                 <a href=""><i class="icofont-facebook"></i></a>
@@ -211,7 +211,7 @@ require_once('insert/header_aggregator.phtml');
         <div class="row">
           <div id="transparency" class="col-lg-4 col-md-6 align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <img src="assets/img/Proofs/CCP_A_Values1.jpg" class="card-img-top" alt="...">
+              <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084094/CCP/proofs/CCP_A_Values1_uonry2.jpg" class="card-img-top" alt="...">
               <div class="card-icon">
                 <i class="bx bx-folder-open"></i>
               </div>
@@ -229,7 +229,7 @@ require_once('insert/header_aggregator.phtml');
           </div>
           <div id="data-security" class="col-lg-4 col-md-6 align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="card">
-              <img src="assets/img/Proofs/CCP_A_Values2.jpg" class="card-img-top" alt="...">
+              <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084094/CCP/proofs/CCP_A_Values2_vmcffb.jpg" class="card-img-top" alt="...">
               <div class="card-icon">
                 <i class="bx bx-task"></i>
               </div>
@@ -250,7 +250,7 @@ require_once('insert/header_aggregator.phtml');
           </div>
           <div id="fair-collection-practices" class="col-lg-4 col-md-6 align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="card">
-              <img src="assets/img/Proofs/CCP_A_Values3.jpg" class="card-img-top" alt="...">
+              <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084094/CCP/proofs/CCP_A_Values3_utrcd4.jpg" class="card-img-top" alt="...">
               <div class="card-icon">
                 <i class="bx bx-phone-call"></i>
               </div>
@@ -290,7 +290,7 @@ require_once('insert/header_aggregator.phtml');
         <div class="row" data-aos="fade-up">
             <div class="col-md-2"></div>
           <div class="col-md-3">
-            <img src="assets/img/award1.jpg" class="img-fluid" alt="">
+            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625066846/CCP/award1_c5jlgg.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-md-5 pt-4">
             <h3>Best Places to Work In Collections</h3>
@@ -307,7 +307,7 @@ require_once('insert/header_aggregator.phtml');
         <div class="row" data-aos="fade-up">
             <div class="col-md-2 order-1 order-md-1"></div>
           <div class="col-md-3 order-2 order-md-3">
-            <img src="assets/img/award2.jpg" class="img-fluid" alt="">
+            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625066846/CCP/award2_ou99zg.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-md-5 pt-5 order-3 order-md-2 text-right">
             <h3>Best Call Centers to Work For</h3>
@@ -325,7 +325,7 @@ require_once('insert/header_aggregator.phtml');
         <div class="row" data-aos="fade-up">
             <div class="col-md-2"></div>
           <div class="col-md-3">
-            <img src="assets/img/award3.jpg" class="img-fluid" alt="">
+            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625066846/CCP/award3_qzkevp.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-md-5 pt-5">
             <h3>Top 10 Innovative Agencies</h3>

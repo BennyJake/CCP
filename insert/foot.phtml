@@ -48,8 +48,29 @@
         lessLink: '<a href="#">Read less</a>',
         collapsedHeight: 250
     });
+
+    <?php
+    if(isset($_GET['active']) && $_GET['active'] == 'circuit-clerks') { ?>
+    $('#myTab a[href="#home"]').tab('show');
+    <?php } else if (isset($_GET['active']) && $_GET['active'] == 'states-attorneys') { ?>
+    $('#myTab a[href="#profile"]').tab('show');
+    <?php } ?>
 </script>
 
+<!-- widget container, must have this exactly "id" property -->
+<div id="lv_chatwidget"></div>
+<!-- embed script from Livevox CDN for chat -->
+<script src="https://chat-cdn.livevox.com/chat/chat-widget-1.0.min.js"></script>
+<script>
+    LVChatWidget.connect({
+        url: 'https://chat.na4.livevox.com/chat/connect', //required, url of chat gateway. Client should know which environment they are in
+        uuid: '81487df008f9f31fe053ae20650ad0b9', //required, client uuid
+        departments: ['Example'], //required, list of available departments to Chat with. Values must match with Chat Routing Token
+        title: 'Chat With Us', //optional, initial chat title
+        avatarUrl: 'https://client.website.com/assets/agentAvatar.svg', //optional, agent default avatar
+        autoCloseTimeout: 300, //optional, timeout used to disconnect the customer after inactivity; default = 300 seconds
+    });
+</script>
 
 </body>
 

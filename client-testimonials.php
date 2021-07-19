@@ -15,11 +15,11 @@ $database = new Medoo([
     'password' => 'Quiet22!'
 ]);
 
-$clerkReviewList = $database->select('review', ['name','title','content', 'image'], [
+$clerkReviewList = $database->select('review', ['id','name','title','content', 'image'], [
     'type' => 'clerk'
 ]);
 
-$attorneyReviewList = $database->select('review', ['name','title','content', 'image'], [
+$attorneyReviewList = $database->select('review', ['id','name','title','content', 'image'], [
     'type' => 'attorney'
 ]);
 
@@ -69,7 +69,7 @@ require_once('insert/header_aggregator.phtml');
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="card-columns">
                                 <?php foreach($clerkReviewList as $clerkReview){ ?>
-                                    <div class="card">
+                                    <div class="card" id="<?= $clerkReview['id'] ?>">
                                         <div class="card-body">
                                             <p>
                                                 <?php
@@ -78,12 +78,12 @@ require_once('insert/header_aggregator.phtml');
                                                 $copyLast = array_pop($parts);
                                                 $copySecondLast = array_pop($parts);
                                                 $copyFirst = implode(' ', $parts);
-                                                $copy = '<i class="bx bxs-quote-alt-left quote-icon-left"></i>&nbsp;' . $copyFirst . ' <nobr>' . $copySecondLast . $copyLast . '&nbsp;<i class="bx bxs-quote-alt-right quote-icon-right"></i></nobr>';
+                                                $copy = '<i class="bx bxs-quote-alt-left quote-icon-left"></i>&nbsp;' . $copyFirst . ' <nobr>' . $copySecondLast . ' ' . $copyLast . '&nbsp;<i class="bx bxs-quote-alt-right quote-icon-right"></i></nobr>';
 
                                                 echo $copy;
 
-                                                if(isset($clerkReview['image']) && !empty($clerkReview['image']) && is_file('assets/img/client/' . $clerkReview['image'])) { ?>
-                                                    <br/><img style="max-width:250px" src="assets/img/client/<?= $clerkReview['image'] ?>">
+                                                if(isset($clerkReview['image']) && !empty($clerkReview['image'])) { ?>
+                                                    <br/><img style="max-width:250px" src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625083834/CCP/client/<?= $clerkReview['image'] ?>">
                                                 <?php } ?>
                                                 <br/><span class="name" style="font-size:.8em;font-weight:600;">&ndash;&nbsp;<?= $clerkReview['name'] ?></span>
                                                 <br/><span class="name" style="font-size:.8em;font-weight:600;">&nbsp;&nbsp;<?= convert_smart_quotes($clerkReview['title']) ?></span>
@@ -96,13 +96,13 @@ require_once('insert/header_aggregator.phtml');
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="card-columns">
                                 <?php foreach($attorneyReviewList as $attorneyReview){ ?>
-                                    <div class="card">
+                                    <div class="card" id="<?= $attorneyReview['id'] ?>">
                                         <div class="card-body">
                                             <p>
                                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>&nbsp;<?= convert_smart_quotes($attorneyReview['content']) ?>&nbsp;<i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                                 <?php
-                                                if(isset($attorneyReview['image']) && !empty($attorneyReview['image']) && is_file('assets/img/client/' . $attorneyReview['image'])) { ?>
-                                                <br/><img style="max-width:250px" src="assets/img/client/<?= $attorneyReview['image'] ?>">
+                                                if(isset($attorneyReview['image']) && !empty($attorneyReview['image'])) { ?>
+                                                <br/><img style="max-width:250px" src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625083834/CCP/client/<?= $attorneyReview['image'] ?>">
                                                 <?php } ?>
                                                 <br/><span class="name" style="font-size:.8em;font-weight:600;">&ndash;&nbsp;<?= $attorneyReview['name'] ?></span>
                                                 <br/><span class="name" style="font-size:.8em;font-weight:600;">&nbsp;&nbsp;<?= $attorneyReview['title'] ?></span>

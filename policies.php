@@ -74,30 +74,6 @@ require_once('insert/header_aggregator.phtml');
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="tab-pane" id="tab-4">
-                            <div class="row">
-                                <div class="col-lg-8 details order-2 order-lg-1">
-                                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                                    <p class="font-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
-                                </div>
-                                <div class="col-lg-4 text-center order-1 order-lg-2">
-                                    <img src="assets/img/features-4.png" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>-->
-                        <!--<div class="tab-pane" id="tab-5">
-                            <div class="row">
-                                <div class="col-lg-8 details order-2 order-lg-1">
-                                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                                    <p class="font-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
-                                </div>
-                                <div class="col-lg-4 text-center order-1 order-lg-2">
-                                    <img src="assets/img/features-5.png" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
             </div>
@@ -143,7 +119,7 @@ require_once('insert/header_aggregator.phtml');
                         </div>
                     </div>
                     <div class="contact-log">
-                        <img src="assets/img/logo/logo.png" style="max-width:300px;margin-top:25px;" />
+                        <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084026/CCP/logo/logo_ple5fd.webp" style="max-width:300px;margin-top:25px;" />
                     </div>
                     <div class="copyright-section">
                         <div class="mr-lg-auto text-center text-lg-left">

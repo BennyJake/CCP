@@ -13,19 +13,22 @@
                     <h3>Credit Collection Partners</h3>
                     <p>CCP was built on the foundation of Service, Compliance, and Results. These are the principles
                         that have made CCP a thriving company since our inception in 1938.</p>
-                    <div class="social-links text-center text-lg-left pt-3 pt-lg-0">
+                    <div class="social-links text-center" style="float:left;">
                         <!--<a href="#" class="twitter"><i class="bx bxl-twitter bx-lg"></i></a>-->
                         <a href="https://www.facebook.com/creditcollectionpartners" target="_blank" class="facebook"><i class="bx bxl-facebook bx-lg"></i></a>
                         <!--<a href="#" class="linkedin"><i class="bx bxl-linkedin bx-lg"></i></a>-->
                     </div>
+                    <div  style="float:left;">
+                    <a href="https://ccp.int001.com/" class="more-btn">Pay Online <i class="bx bx-chevron-right"></i></a>
+                    </div>
                 </div>
                 <div class="contact-log">
-                    <img src="assets/img/logo/logo.png" style="max-width:300px;margin-top:25px;" />
+                    <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084026/CCP/logo/logo_ple5fd.webp" style="max-width:300px;margin-top:25px;" />
                 </div>
                 <div class="copyright-section">
                     <div class="mr-lg-auto text-center text-lg-left">
                         <div class="copyright">
-                            &copy; Copyright <strong><span>Company</span></strong>. All Rights Reserved
+                            &copy; Copyright <strong><span>Credit Collection Partners</span></strong>.<br/>All Rights Reserved
                         </div>
                         <div class="credits">
                             <!-- All the links in the footer should remain intact. -->
@@ -57,7 +60,7 @@
                     </div>
                     <div>
                         <i class="ri-phone-line"></i>
-                        <p>Mon-Fri 9am - 5pm </p>
+                        <p>Mon-Fri 8am - 5pm </p>
                     </div>
                     <div>
                         <i class="ri-map-pin-line"></i>
@@ -72,7 +75,8 @@
             </div>
 
             <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <!-- info@creditcollectionpartners.com -->
+                <form action="forms/contact.php" id="send-message-form" method="post" role="form" class="php-email-form">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                         <div class="validate"></div>
@@ -94,7 +98,7 @@
                         <div class="error-message"></div>
                         <div class="sent-message">Your message has been sent. Thank you!</div>
                     </div>
-                    <div class="text-center"><button type="submit">Send</button></div>
+                    <div class="text-center"><button type="submit" id="send-message-button">Send</button></div>
                 </form>
             </div>
 
@@ -102,7 +106,40 @@
 
     </div>
 </section><!-- End Contact Section -->
+<script type="text/javascript">
+    let link = "<?= $_SERVER['SERVER_NAME'].substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/'))?>/send-message.php";
 
+    const button = document.querySelector('#send-message-button');
+
+    button.addEventListener('click', event => {
+        button.textContent = `Click count: ${event.detail}`;
+
+        console.log(document.getElementById("send-message-form").elements);
+        ajaxSubmission();
+    });
+
+    function ajaxSubmission() {
+        fetch(link,
+            {
+                method: 'POST',
+                headers:
+                    {"Content-Type": "application/json; charset=utf-8"},
+                body: JSON.stringify({
+                    name: document.getElementsByName('message')[0].value,
+                    email: document.getElementsByName('message')[0].value,
+                    subject: document.getElementsByName('message')[0].value,
+                    message: document.getElementsByName('message')[0].value
+                })
+
+            })
+            .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
+            .then(response => {
+                // here you do what you want with response
+                alert("Worked!")
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
+    }
+</script>
 </main><!-- End #main -->
-
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>

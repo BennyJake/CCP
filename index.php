@@ -1,4 +1,51 @@
 <?php
+require_once('vendor/autoload.php');
+
+// Using Medoo namespace
+use Medoo\Medoo;
+
+// Initialize
+$database = new Medoo([
+    'database_type' => 'mysql',
+    'database_name' => 'ccp',
+    //'server' => 'http://104.248.181.33:3306',
+    'server' => 'localhost',
+    'username' => 'ccp',
+    'password' => 'Quiet22!'
+]);
+
+$homePageTestimonialList = $database->select('review', ['name','type','title','content', 'image'], [
+    'homepage' => 1,
+    'OR' => [
+            'type' => ['clerk', 'attorney']
+    ]
+]);
+
+$homePageReviewList = $database->select('review', ['name','type','title','content', 'image'], [
+    'homepage' => 1,
+    'OR' => [
+            'type' => ['bbb', 'google']
+    ]
+]);
+
+function convert_smart_quotes($string)
+
+{
+    $search = array(chr(145),
+        chr(146),
+        chr(147),
+        chr(148),
+        chr(151));
+
+    $replace = array("'",
+        "'",
+        '"',
+        '"',
+        '-');
+
+    return str_replace($search, $replace, $string);
+}
+
 require_once('insert/head.phtml');
 require_once('insert/top_bar.phtml');
 require_once('insert/header.phtml');
@@ -10,7 +57,7 @@ require_once('insert/header.phtml');
       <!--<h1>Welcome to CCP</h1>
       <h2>Collections | Consulting</h2>-->
       <div style="margin: 0px auto;width: 400px;">
-        <img src="assets/img/logo/CCP_Logo_W.png">
+        <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625084025/CCP/logo/CCP_Logo_W_fuyi9s.png">
       </div>
       <!--<div class="d-flex align-items-center">
         <i class="bx bxs-right-arrow-alt get-started-icon"></i>
@@ -38,7 +85,7 @@ require_once('insert/header.phtml');
                               82 years of Service, Compliance and Results
                           </p>
                           <div class="text-center">
-                              <a href="#" class="more-btn">Meet the Team <i class="bx bx-chevron-right"></i></a>
+                              <a href="about.php" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -48,7 +95,7 @@ require_once('insert/header.phtml');
                     <h4>Consumer Reviews</h4>
                     <p>Hear from our consumers</p>
                     <div class="text-center">
-                      <a href="#" class="more-btn">View All <i class="bx bx-chevron-right"></i></a>
+                      <a href="consumer-reviews.php" class="more-btn">View All <i class="bx bx-chevron-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -56,9 +103,9 @@ require_once('insert/header.phtml');
                   <div class="icon-box alt-icon-box mt-4 mt-xl-0">
                     <i class="bx bx-credit-card-front"></i>
                     <h4>Pay Online</h4>
-                    <p>Log-in for online payment information</p>
+                    <p>Log-in to view account details, create payment plans, see payment history, and more</p>
                     <div class="text-center">
-                      <a href="#" class="more-btn">Pay Now <i class="bx bx-chevron-right"></i></a>
+                      <a href="https://ccp.int001.com/" class="more-btn">Pay Now <i class="bx bx-chevron-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -68,7 +115,7 @@ require_once('insert/header.phtml');
                     <h4>Client Log-In</h4>
                     <p>Access your Client dashboard</p>
                     <div class="text-center">
-                      <a href="#" class="more-btn">Log&ndash;In <i class="bx bx-chevron-right"></i></a>
+                      <a href="https://ccp.interprose.com/login.do?customerID=CCP" class="more-btn">Log&ndash;In <i class="bx bx-chevron-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -79,70 +126,101 @@ require_once('insert/header.phtml');
 
       </div>
     </section><!-- End Why Us Section -->
-	
-	<!-- ======= Testimonials Section ======= -->
+
+    <!-- ======= Reviews Section ======= -->
+    <section id="reviews" class="reviews section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3>Consumer Reviews</h3>
+                <!--<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>-->
+            </div>
+
+            <div class="owl-carousel testimonials-carousel">
+
+                <?php foreach($homePageReviewList as $homePageReview){
+                    $singleReview = convert_smart_quotes($homePageReview['content']);
+                    $showPartial = strlen($singleReview) > 100;
+                    if($showPartial){
+                        $content = substr($singleReview,0,100) . '...';
+                    }
+                    else{
+                        $content = $singleReview;
+                    }
+                    ?>
+                    <div>
+                        <p class="review-item">
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            <?= $content ?>
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            <?php
+                            if($showPartial){ ?>
+                                <span class="click-for-full"><a href="consumer-reviews.php">click for full review</a></span>
+                            <?php } ?>
+                            <br/><span class="name"><?= $homePageReview['name'] ?></span>
+                        </p>
+
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
+            <div class="text-center" style="margin-top:20px">
+                <a href="consumer-reviews.php" class="more-btn">View All <i class="bx bx-chevron-right"></i></a>
+            </div>
+        </div>
+    </section><!-- End Reviews Section -->
+
+
+    <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
-      <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h3>Client Testimonials</h3>
-          <!--<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>-->
+            <div class="section-title">
+                <h3>Client Testimonials</h3>
+                <!--<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>-->
+            </div>
+
+            <div class="owl-carousel testimonials-carousel">
+
+                <?php foreach($homePageTestimonialList as $homePageTestimonial){
+                    $singleTestimonial = convert_smart_quotes($homePageTestimonial['content']);
+                    $showPartial = strlen($singleTestimonial) > 200;
+                    if($showPartial){
+                        $content = substr($singleTestimonial,0,200) . '...';
+                    }
+                    else{
+                        $content = $singleTestimonial;
+                    }
+                    ?>
+                    <div class="testimonial-item">
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            <?= $content ?>
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            <?php
+                            if($homePageTestimonial['type'] == 'clerk') {
+                                $active = 'circuit-clerks';
+                            } elseif ($homePageTestimonial['type'] == 'attorney'){
+                                $active = 'states-attorneys';
+                            }
+                            if($showPartial){ ?>
+                                <br/><a href="client-testimonials.php?active=<?=  $active ?>">click for full testimonial</a>
+                            <?php } ?>
+                            <img src="https://res.cloudinary.com/df5atw3fa/image/upload/v1625083834/CCP/client/<?= $homePageTestimonial['image'] ?>" class="testimonial-img" alt=""/>
+                            <span class="name"><?= $homePageTestimonial['name'] ?></span><br/>
+                            <span class="description"><?= $homePageTestimonial['title'] ?></span>
+                        </p>
+
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
+            <div class="text-center" style="margin-top:20px">
+                <a href="client-testimonials.php" class="more-btn">View All <i class="bx bx-chevron-right"></i></a>
+            </div>
         </div>
-
-        <div class="owl-carousel testimonials-carousel">
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                "The team at Credit Collection Partners is always very professional and timely in their work, helping to secure revenue for smaller, rural counties who otherwise wouldn't receive this funding that goes to support critical court and county services. They really do a great job, and much of it is because they know how to 'walk the walk.'...
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i><br/><a href="testimonials.php"> click for full review</a>
-              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""/>
-              <span class="name">Justin Hood</span><br/>
-              <span class="description">Hamilton County State's Attorney & <br/>Illinois State’s Attorney's Association President</span>
-            </p>
-
-          </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              "Macoupin County previously attempted to oversee all collection of outstanding fines internally within the State’s Attorney’s Office. Pay or Appear notices were sent to defendants, many of which were ‘mail returned’, but rarely did these court appearances result in meaningful payment of fines...
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i><br/><a href="testimonials.php"> click for full review</a>
-              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <span class="name">Jennifer Watson</span><br/>
-              <span class="description">Macoupin County State's Attorney</span>
-            </p>
-
-          </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              "The group at CCP are the best. Becky & Tammy and the rest of the group are so knowledgeable & helpful with the collection process.. They are so attentive and can help with any questions you may have. Proud to have them as our partners."              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <span class="name">Bryce Gleckler</span><br/>
-              <span class="description">Pike County Circuit Clerk</span>
-            </p>
-
-          </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              "CCP is so highly integrated with the Goodin Associates Collection interface that it makes placing cases for collection and reporting transactions/adjustments a breeze! Becky Jansen is there every step of the way to ensure your staff knows how to use it."              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <span class="name">Kathy Emerick</span><br/>
-              <span class="description">Fayette County Circuit Clerk</span>
-            </p>
-
-          </div>
-
-
-        </div>
-          <div class="text-center" style="margin-top:20px">
-              <a href="#" class="more-btn">View All <i class="bx bx-chevron-right"></i></a>
-          </div>
-      </div>
     </section><!-- End Testimonials Section -->
 
     <!-- ======= Cta Section ======= -->

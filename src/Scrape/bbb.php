@@ -54,17 +54,18 @@ foreach($bbbArray['items'] as $bbbItem){
         $content = strtr($content, $quotes);
         $dateTime = $bbbItem['extendedText'][0]['date']['year'] . '-' . $bbbItem['extendedText'][0]['date']['month'] . '-' . $bbbItem['extendedText'][0]['date']['day'];
         $score = $bbbItem['reviewStarRating'];
+        $shouldSave = $score >= 4;
 
-        //var_dump($bbbItem);
+        if($shouldSave) {
 
-        $database->insert('review', [
-            'type' => 'bbb',
-            'stars' => $score,
-            'name' => $bbbItem['displayName'],
-            'content' => $content,
-            'datetime' => date('Y-m-d H:i:s', strtotime($dateTime))
-        ]);
-
+            $database->insert('review', [
+                'type' => 'bbb',
+                'stars' => $score,
+                'name' => $bbbItem['displayName'],
+                'content' => $content,
+                'datetime' => date('Y-m-d H:i:s', strtotime($dateTime))
+            ]);
+        }
         //echo '<pre>';
         //var_dump($bbbItem);
         //echo '</pre>';
@@ -145,3 +146,36 @@ foreach($resultListSection as $section) {
         }
     }
 }
+
+
+$database->delete('overall_review', ['']);
+//overall Google reviews
+
+$googleOverallReview = floatval($dom->find('.Aq14fc')[0]->text);
+$googleOverallTotalReviews = floatval($dom->find('.z5jxId')[0]->text);
+
+$database->insert('overall_review',[
+    'service' => 'google',
+    'rating' => $googleOverallReview,
+    'number_reviews' => $googleOverallTotalReviews
+]);
+
+$dom = new Dom;
+$fileContent = file_get_contents('https://www.bbb.org/us/il/taylorville/profile/collections-agencies/credit-collection-partners-0734-310569227');
+
+$domDocument = new \DOMDocument();
+@$domDocument->loadHTML($fileContent);
+
+$html = $domDocument->saveHTML();
+
+//var_dump($html);
+
+$dom->loadStr($domDocument->saveHTML());
+$bbbOverallReview = floatval($dom->find('.eGoMTV span strong')[0]->text);
+$bbbOverallTotalReviews = intval(str_replace(['Average of ', ' Customer Reviews'], '', $dom->find('.business-reviews-card__body--has-reviews p')[0]->text));
+
+$database->insert('overall_review',[
+    'service' => 'bbb',
+    'rating' => $bbbOverallReview,
+    'number_reviews' => $bbbOverallTotalReviews
+]);

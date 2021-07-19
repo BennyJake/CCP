@@ -19,9 +19,19 @@ $bbbReviewList = $database->select('review', ['stars', 'name', 'content', 'datet
     'type' => 'bbb'
 ]);
 
+$bbbOverallReview = $database->select('overall_review', ['rating', 'number_reviews'], [
+    'service' => 'bbb'
+])[0];
+
 $googleReviewList = $database->select('review', ['stars', 'name', 'content', 'datetime'], [
     'type' => 'google'
 ]);
+
+$googleOverallReview = $database->select('overall_review', ['rating', 'number_reviews'], [
+    'service' => 'google'
+])[0];
+
+$fullReviewList = array_merge($bbbReviewList, $googleReviewList);
 
 $assetDir = 'consumer-reviews';
 $heroTitle = 'Consumer Reviews';
@@ -29,6 +39,29 @@ $heroTitle = 'Consumer Reviews';
 require_once('insert/header_aggregator.phtml');
 ?>
 
+<style type="text/css">
+    @charset "UTF-8";
+    :root {
+        --star-size: 60px;
+        --star-color: #fff;
+        --star-background: #fc0;
+    }
+
+    .Stars {
+        --percent: calc(var(--rating) / 5 * 100%);
+        display: inline-block;
+        font-size: var(--star-size);
+        font-family: Times;
+        line-height: 1;
+    }
+    .Stars::before {
+        content: "★★★★★";
+        letter-spacing: 3px;
+        background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
@@ -37,64 +70,47 @@ require_once('insert/header_aggregator.phtml');
                 <h3>Markets</h3>-->
                 <!--<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>-->
             <!--</div>-->
-            <div class="row">
+            <div class="row" style="padding-bottom:0px;">
+                <div class="image col-lg-6" style="text-align:center;" data-aos="fade-in">
+                    <h2>Google Rating</h2>
+                    <div class="Stars" style="--rating: <?= $googleOverallReview['rating']; ?>" aria-label="Rating of this product is <?= $googleOverallReview['rating']; ?> out of 5."></div>
+                            <p><span style="font-weight: 600;font-size=1.2em;"><?= $googleOverallReview['rating']; ?>/5</span> average from <span style="font-weight: 600;font-size=1.2em;"><?= $googleOverallReview['number_reviews']; ?></span> reviews</p>
+                    <p><a target="_blank" href="https://www.google.com/search?q=google+review+credit+collection+partners&oq=google+review+credit+collection+partners&aqs=chrome..69i57j69i64.7495j0j7&sourceid=chrome&ie=UTF-8#lrd=0x8874e416683a0b7b:0x74a59ba5e41618e8,1,,,"
+                          class="more-btn">View All <i class="bx bx-chevron-right"></i></a></p>
+                </div>
+                <div class="image col-lg-6" style="text-align:center;" data-aos="fade-in">
+                    <h2>BBB Rating</h2>
+                    <div class="Stars" style="--rating: <?= $bbbOverallReview['rating']; ?>" aria-label="Rating of this product is <?= $bbbOverallReview['rating']; ?> out of 5."></div>
+                    <p><span style="font-weight: 600;font-size=1.2em;"><?= $bbbOverallReview['rating']; ?>/5</span> average from <span style="font-weight: 600;font-size=1.2em;"><?= $bbbOverallReview['number_reviews']; ?></span> reviews</p>
+                    <p><a target="_blank" href="https://www.bbb.org/us/il/taylorville/profile/collections-agencies/credit-collection-partners-0734-310569227/customer-reviews"
+                          class="more-btn">View All <i class="bx bx-chevron-right"></i></a></p>
+                </div>
+            </div>
+            <div class="row" style="padding-top:0px;">
                 <div class="image col-lg-12" data-aos="fade-in">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">BBB / Better Business Bureau Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Google Business Reviews</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
                             <div class="card-columns">
-                            <?php foreach($bbbReviewList as $bbbReview){
-                                $nameParts = explode(' ', $bbbReview['name']);
+                            <?php foreach($fullReviewList as $review){
+                                $nameParts = explode(' ', $review['name']);
                                 if(sizeof($nameParts) >= 2){
                                     $name = ucfirst($nameParts[0]);
                                 }
                                 else{
-                                    $name = ucfirst($bbbReview['name']);
+                                    $name = ucfirst($review['name']);
                                 }
                                 ?>
                                     <div class="card">
                                         <div class="card-body">
                                             <p>
-                                                <i class="bx bxs-quote-alt-left quote-icon-left"></i><?= $bbbReview['content'] ?><i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                                <i class="bx bxs-quote-alt-left quote-icon-left"></i><?= $review['content'] ?><i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                                 <br/><span class="name" style="font-size:.8em;font-weight:600;">&ndash;&nbsp;<?= $name ?></span>
-                                                <!--<br/><span class="star"><?= $bbbReview['stars'] ?> out of 5</span>-->
+                                                <!--<br/><span class="star"><?= $review['stars'] ?> out of 5</span>-->
                                             </p>
                                         </div>
                                     </div>
                             <?php } ?>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="card-columns">
-                            <?php foreach($googleReviewList as $googleReview){
-                                $nameParts = explode(' ', $googleReview['name']);
-                                if(sizeof($nameParts) >= 2){
-                                    $name = ucfirst($nameParts[0]);
-                                }
-                                else{
-                                    $name = ucfirst($googleReview['name']);
-                                }
-                                ?>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p>
-                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i><?= $googleReview['content'] ?><i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                            <br/><span class="name" style="font-size:.8em;font-weight:600;">&ndash;&nbsp;<?= $name ?></span>
-                                            <!--<br/><span class="star"><?= $googleReview['stars'] ?> out of 5</span>-->
-                                        </p>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                                </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
